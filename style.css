@@ -11,6 +11,40 @@ header {
     padding: 2rem 0;
 }
 
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh; /* take most of screen */
+  background: url('background.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Dark overlay for readability */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Keep text above overlay */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  opacity: 0; /* hidden at first */
+  transform: translateY(20px); /* slide up effect */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 #logo {
     width: 150px;
 }
@@ -26,4 +60,10 @@ video {
     max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+/* Logo Styling */
+.logo {
+  height: 60px;   /* adjust size */
+  display: block;
+  margin: 0 auto 10px; /* center and add spacing */
 }

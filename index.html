@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entler Entertainment</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entler Entertainment</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="script.js">
 </head>
 <body>
-    <header>
-        <img src="assets/images/logo.png" alt="Entler Entertainment Logo" id="logo">
-    </header>
-    <main>
-        <h1>Welcome to Entler Entertainment</h1>
-        <video src="assets/videos/intro.mp4" controls poster="assets/images/background.jpg"></video>
-    </main>
-    <script src="js/script.js"></script>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="Entler Entertainment Logo" class="logo">
+    <h1>Entler Entertainment</h1>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h2>Innovative AR Games</h2>
+    <p>We create unique augmented reality experiences that bring your world to life.</p>
+    <a href="#games" class="btn">Explore Games</a>
+  </div>
+</section>
+
+  <!-- Games Section -->
+  <section id="games" class="games">
+    <h2>Our AR Games</h2>
+
+    <div class="card">
+      <img src="minesweepar.jpg" alt="MinesweepAR">
+      <h3>MinesweepAR</h3>
+      <p>Classic minesweeper reimagined in AR. Play in your own space.</p>
+      <a href="#" class="btn">Play Now</a>
+    </div>
+
+    <div class="card">
+      <img src="mygpsfootprint.jpg" alt="myGPSfootprint">
+      <h3>myGPSfootprint</h3>
+      <p>Turn your movement into art with GPS-based AR footprints.</p>
+      <a href="#" class="btn">Discover</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Entler Entertainment</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
