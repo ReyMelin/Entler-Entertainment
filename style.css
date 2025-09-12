@@ -9,13 +9,18 @@ body {
 header {
     text-align: center;
     padding: 2rem 0;
+  position: relative;
+  background: linear-gradient(135deg, rgba(10,10,20,0.95) 60%, rgba(40,40,60,0.85) 100%);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.5);
+  overflow: hidden;
+  filter: blur(0.5px) brightness(0.9);
 }
 
 /* Hero Section */
 .hero {
   position: relative;
   height: 80vh; /* take most of screen */
-  background: url('background.jpg') center/cover no-repeat;
+  background: url('assets/images/GPS map.jpeg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,12 +42,14 @@ header {
   z-index: 1;
   opacity: 0; /* hidden at first */
   transform: translateY(20px); /* slide up effect */
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease, color 2s ease;
+  color: #222; /* start dark */
 }
 
 .hero-content.visible {
   opacity: 1;
   transform: translateY(0);
+  /* color will be animated by JS */
 }
 
 #logo {
