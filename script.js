@@ -3,41 +3,40 @@ window.addEventListener("load", () => {
   const heroText = document.querySelector(".hero-content");
   heroText.classList.add("visible");
 
-  // Start the JavaScript lava lamp
-  const hero = document.querySelector(".hero");
-  startLavaLamp(hero);
+  // Start lava lamp on the body
+  startLavaLamp(document.body);
 });
 
-// Lava lamp effect using canvas (blue + purple)
-function startLavaLamp(hero) {
+// Lava lamp effect across the whole page
+function startLavaLamp(container) {
   const colors = [
     "rgba(0, 200, 255, 0.3)",  // blue
     "rgba(150, 0, 255, 0.3)"   // purple
   ];
 
   const canvas = document.createElement("canvas");
-  hero.appendChild(canvas);
-  canvas.style.position = "absolute";
+  container.appendChild(canvas);
+  canvas.style.position = "fixed"; /* covers viewport */
   canvas.style.top = 0;
   canvas.style.left = 0;
   canvas.style.width = "100%";
   canvas.style.height = "100%";
-  canvas.style.zIndex = 0;
+  canvas.style.zIndex = -1; /* stay behind content */
 
   const ctx = canvas.getContext("2d");
   let width, height;
   function resize() {
-    width = canvas.width = hero.offsetWidth;
-    height = canvas.height = hero.offsetHeight;
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
   }
   window.addEventListener("resize", resize);
   resize();
 
   // Blobs setup
-  const blobs = Array.from({ length: 5 }, (_, i) => ({
+  const blobs = Array.from({ length: 8 }, (_, i) => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    r: 100 + Math.random() * 100,
+    r: 120 + Math.random() * 150,
     dx: (Math.random() - 0.5) * 2,
     dy: (Math.random() - 0.5) * 2,
     color: colors[i % colors.length]

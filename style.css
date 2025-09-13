@@ -8,38 +8,37 @@
 body {
   font-family: Arial, sans-serif;
   color: white;
-  background-color: #000; /* fallback */
+  background-color: #000; /* fallback under canvas */
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Header */
 header {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 200, 255, 0.4) 0%,   /* blue top-left */
-    rgba(150, 0, 255, 0.4) 20%, /* purple top-right */
-    #000 100%                   /* fades to black at bottom */
-  );
+  background: transparent; /* lava lamp shows through */
   padding: 20px;
   text-align: center;
   position: relative;
-  z-index: 10; /* stay above canvas */
+  z-index: 10; /* keep above canvas */
+  
 }
 
 header h1 {
   font-size: 2rem;
   color: white;
   letter-spacing: 2px;
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 60%;
+  text-align: center;
+  backdrop-filter: blur(8px); /* frosted glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
-
-
-header h1 {
-  font-size: 2rem;
-  color: white;
-  letter-spacing: 2px;
-}
-
 
 /* Hero Section */
 .hero {
@@ -51,6 +50,7 @@ header h1 {
   text-align: center;
   color: white;
   overflow: hidden;
+  background: transparent; /* lava lamp shows through */
 }
 
 .hero-content {
@@ -73,3 +73,66 @@ header h1 {
 
 .hero p {
   font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: transparent; /* let lava lamp show */
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 10;
+}
+/* Games Section */
+.games {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10; /* stay above lava lamp */
+}
+
+.game-card {
+  background: rgba(0, 0, 0, 0.6); /* glassy dark */
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  padding: 30px;
+  width: 280px;
+  text-align: center;
+  backdrop-filter: blur(8px); /* frosted glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #00c8ff; /* neon blue */
+}
+
+.game-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.game-card a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  background: linear-gradient(90deg, #00c8ff, #9600ff);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.game-card a:hover {
+  background: linear-gradient(90deg, #9600ff, #00c8ff);
+}
+
+.game-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
+}
