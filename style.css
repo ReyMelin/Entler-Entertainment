@@ -40,6 +40,40 @@ header h1 {
   display: block;
 }
 
+header nav {
+  margin-top: 20px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+}
+
+header nav ul li {
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+header nav ul li:hover {
+  background: rgba(0, 200, 255, 0.15);
+}
+
+/* Responsive: stack nav vertically on small screens */
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
 /* Hero Section */
 .hero {
   position: relative;
