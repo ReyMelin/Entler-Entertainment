@@ -1,7 +1,7 @@
 // Fade in hero section on load
 window.addEventListener("load", () => {
-  const heroText = document.querySelector(".hero-content");
-  heroText.classList.add("visible");
+  const headerH1 = document.querySelector("header h1");
+  headerH1.classList.add("visible");
 
   // Start lava lamp on the body
   startLavaLamp(document.body);
