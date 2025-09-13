@@ -124,6 +124,14 @@ footer {
   z-index: 10;
 }
 /* Games Section */
+.games h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #00c8ff;
+  width: 100%;
+}
+
 .games {
   display: flex;
   justify-content: center;
@@ -132,6 +140,7 @@ footer {
   position: relative;
   z-index: 10; /* stay above lava lamp */
 }
+
 
 .game-card {
   background: rgba(0, 0, 0, 0.6); /* glassy dark */
@@ -176,19 +185,90 @@ footer {
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
 }
 
-/* About and Contact Sections */
-.about, .contact {
+/* About Section */
+.about {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #00c8ff;
+  width: 100%;
+}
+
+.about-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.15);
+  padding: 30px;
+  margin: 0;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.about-card p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin: 0;
+  flex: 1 1 0;
+}
+
+.about-card img.about-image {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  flex: 1 1 0;
+  margin: 0;
+}
+
+@media (min-width: 801px) {
+  .about {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .about h2 {
+    width: 100%;
+    order: -1;
+  }
+  .about-card {
+    margin: 0 15px;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-card {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+  }
+}
+
+/* Contact Section */
+.contact {
   padding: 60px 20px;
   text-align: center;
 }
 
-.about h2, .contact h2 {
+.contact h2 {
   font-size: 2rem;
   margin-bottom: 15px;
   color: #00c8ff;
 }
 
-.about p, .contact p {
+.contact p {
   font-size: 1.2rem;
   color: #ddd;
   max-width: 700px;
