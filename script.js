@@ -2,34 +2,66 @@
 window.addEventListener("load", () => {
   const heroText = document.querySelector(".hero-content");
   heroText.classList.add("visible");
-  // Add floating animation to hero-content
-  let floatDirection = 1;
-  let floatOffset = 0;
-  function animateFloat() {
-    floatOffset += 0.3 * floatDirection;
-    if (floatOffset > 12 || floatOffset < -12) floatDirection *= -1;
-    heroText.style.transform = `translateY(${floatOffset}px)`;
-    requestAnimationFrame(animateFloat);
-  }
-  animateFloat();
 
-  // Fade font color from dark to light ONLY for header h1
-  let colorStep = 0;
-  const headerText = document.querySelector("header h1");
-  const startColor = [34, 34, 34]; // #222
-  const endColor = [255, 255, 255]; // #fff
-  function lerp(a, b, t) {
-    return a + (b - a) * t;
-  }
-  function animateColor() {
-    colorStep += 0.02;
-    if (colorStep > 1) colorStep = 1;
-    const r = Math.round(lerp(startColor[0], endColor[0], colorStep));
-    const g = Math.round(lerp(startColor[1], endColor[1], colorStep));
-    const b = Math.round(lerp(startColor[2], endColor[2], colorStep));
-    headerText.style.color = `rgb(${r},${g},${b})`;
-    if (colorStep < 1) requestAnimationFrame(animateColor);
-  }
-  animateColor();
+  // Start the JavaScript lava lamp
+  const hero = document.querySelector(".hero");
+  startLavaLamp(hero);
 });
-// Note: This file is linked in index.html for potential future JavaScript functionality.
+
+// Lava lamp effect using canvas (blue + purple)
+function startLavaLamp(hero) {
+  const colors = [
+    "rgba(0, 200, 255, 0.3)",  // blue
+    "rgba(150, 0, 255, 0.3)"   // purple
+  ];
+
+  const canvas = document.createElement("canvas");
+  hero.appendChild(canvas);
+  canvas.style.position = "absolute";
+  canvas.style.top = 0;
+  canvas.style.left = 0;
+  canvas.style.width = "100%";
+  canvas.style.height = "100%";
+  canvas.style.zIndex = 0;
+
+  const ctx = canvas.getContext("2d");
+  let width, height;
+  function resize() {
+    width = canvas.width = hero.offsetWidth;
+    height = canvas.height = hero.offsetHeight;
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  // Blobs setup
+  const blobs = Array.from({ length: 5 }, (_, i) => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    r: 100 + Math.random() * 100,
+    dx: (Math.random() - 0.5) * 2,
+    dy: (Math.random() - 0.5) * 2,
+    color: colors[i % colors.length]
+  }));
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    blobs.forEach(b => {
+      b.x += b.dx;
+      b.y += b.dy;
+
+      if (b.x < 0 || b.x > width) b.dx *= -1;
+      if (b.y < 0 || b.y > height) b.dy *= -1;
+
+      const gradient = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
+      gradient.addColorStop(0, b.color);
+      gradient.addColorStop(1, "transparent");
+
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
