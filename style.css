@@ -25,19 +25,21 @@ header {
 }
 
 header h1 {
-  font-size: 2rem;
-  color: white;
-  letter-spacing: 2px;
-  border: 1px solid rgba(0, 200, 255, 0.4);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 3rem;
+  color: #00c8ff;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
   border-radius: 15px;
   padding: 30px;
   max-width: 60%;
-  text-align: center;
-  backdrop-filter: blur(8px); /* frosted glass effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: auto;
   margin-right: auto;
   display: block;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
 }
 
 header nav {
