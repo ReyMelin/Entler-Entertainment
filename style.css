@@ -73,9 +73,22 @@ header nav ul li:hover {
     align-items: center;
   }
 
-  .games {
+  .games-card {
     flex-direction: column;
     align-items: center;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
 
@@ -123,6 +136,7 @@ footer {
   position: relative;
   z-index: 10;
 }
+
 /* Games Section */
 .games h2 {
   text-align: center;
@@ -130,10 +144,14 @@ footer {
   font-size: 2rem;
   color: #00c8ff;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .games {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 30px;
   padding: 60px 20px;
@@ -187,11 +205,13 @@ footer {
 
 /* About Section */
 .about {
-  padding: 60px 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
-  text-align: center;
+  padding: 60px 20px;;
+  z-index: 10; /* stay above lava lamp */
 }
 
 .about h2 {
@@ -206,30 +226,29 @@ footer {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(0, 200, 255, 0.4);
   border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.15);
-  padding: 30px;
-  margin: 0;
-  max-width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  height: 100%;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(8px); /* frosted glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card p {
   font-size: 1.2rem;
   color: #ddd;
   margin: 0;
-  flex: 1 1 0;
+  padding: 10%
 }
 
 .about-card img.about-image {
-  max-width: 220px;
+  display: inline-block;
+  max-width: 500px;
   width: 100%;
-  height: auto;
+  height: 120%;
   border-radius: 15px;
-  flex: 1 1 0;
-  margin: 0;
 }
 
 @media (min-width: 801px) {
