@@ -220,15 +220,14 @@ header nav ul li a:hover {
 }
 
 .about-card {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 200, 255, 0.4);
   border-radius: 15px;
-  width: auto;
-  text-align: center;
-  display: inline-block;
+  padding-inline-start: 10px;
+  width: fit-content;
+  height:auto;
+  display: inline-flex;
+  flex-direction: column;
   gap: 30px;
-  backdrop-filter: blur(8px); /* frosted glass effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop: transparent; /* let lava lamp show */
 }
 
 .about-card p {
@@ -237,15 +236,17 @@ header nav ul li a:hover {
   margin: 0;
   padding: 10%;
   max-width: 500px;
+  max-height: min-content;
   width: 100%;
   border-radius: 15px;
 }
 
 .about-card img.about-image {
+  padding: 10%;
   display: inline-block;
-  max-width: 500px;
-  width: 100%;
-  height: auto;
+  justify-content: flex-start;
+  max-width: 250px;
+  max-height: 300px;
   border-radius: 15px;
 }
 
