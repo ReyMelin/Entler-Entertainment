@@ -5,21 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entler Entertainment</title>
-  <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <img src="EE Logo.png" alt="Entler Entertainment Logo">
     <h1>Entler Entertainment</h1>
     <nav>
-      <ul>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+        <button><a href="#games">Games</a></button>
+        <button><a href="#books">Books</a></button>
+        <button><a href="#about">About</a></button>
+        <button><a href="#contact">Contact</a></button>
     </nav>
   </header>
 
@@ -28,7 +25,7 @@
     <div class="hero-content">
       <h2>From augmented reality to backwoods shenanigans</h2>
       <h2>Stories. Games. Adventures.</h2>
-      <p>Experience innovation that ignites connection</p>
+        <p>Experience innovation that ignites connection</p>
     </div>
   </hero>
 
@@ -49,36 +46,39 @@
       <p>Track your journey and leave a footprint on the digital world.</p>
       <a href="#">Coming Soon</a>
     </div>
-  </section>
+  </games>
 
   <!-- About Section -->
   <about>
-      
-    <h2>About</h2>
+    <div class="section-header">
+      <h2>About</h2>
+    </div>
+    
     <div class="about-card">
       <ul>
-        <p>
-        Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.
-        </p>
+        <p>Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.</li>
+        <img src="assets/images/EE ohio.jpg" alt="Entler Entertainment logo featuring stylized letters EE with a map outline of Ohio in the background, bold and energetic design, text reads Entler Entertainment Ohio, overall tone is dynamic and inviting" class="about-image"></li>
       </ul>
-    </div>
-
-    <div class="about-card">
-      <img src="assets/images/EE ohio.jpg" alt="Entler Entertainment logo featuring stylized letters EE with a map outline of Ohio in the background, bold and energetic design, text reads Entler Entertainment Ohio, overall tone is dynamic and inviting" class="about-image">
     </div>
   </about>
 
   <!-- Contact Us Section -->
   <contact>
-    <h2>Contact Us</h2>
-    <p>
-      Have questions or want to collaborate? Reach out to us <a href="mailto:info@entler-entertainment.com">info@entler-entertainment.com</a>.
-    </p>
+    <div class="section-header">
+      <h2>Contact Us</h2>
+    </div>
+    <div class="contact-info">
+      <p>
+        Have questions or want to collaborate? Reach out to us <a href="mailto:info@entler-entertainment.com">info@entler-entertainment.com</a>.
+      </p>
+    </div>
   </contact>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Entler Entertainment. All rights reserved.</p>
+    <div class="footer-content">
+     <p>&copy; 2025 Entler Entertainment. All rights reserved.</p>
+    </div> 
   </footer>
 </body>
 </html>

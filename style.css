@@ -2,88 +2,65 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  text-align: center;
 }
 
 body {
   font-family: Arial, sans-serif;
   color: white;
   background-color: #000; /* fallback under canvas */
-  line-height: 1.6;
-  overflow-x: hidden;
-  position: relative;
 }
 
 /* Header */
 header {
+  background: linear-gradient(180deg, #000000, transparent);
+  margin: 0;
   padding: 3rem;
-  text-align: center;
-  position: relative;
+  padding-bottom: 1rem;
+  column-gap: 2rem;
   z-index: 10; /* keep above canvas */
 }
 
 header h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-family: 'Goldman', Arial, sans-serif;
-  letter-spacing: 2px;
-  font-weight: 700;
+  font-size: 5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #00c8ff;
   text-shadow: 0 0 25px rgba(149, 0, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
-  border-radius: 15px;
-  padding: 20px;
-  max-width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #000;
-  overflow: visible; /* Ensure shadow is visible */
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 2s ease, transform 2s ease;
-  display: block;
-  text-wrap: nowrap;
 }
 
-header h1.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-header nav {
+nav {
   margin-top: 30px;
-}
-
-header nav ul {
   display: flex;
   justify-content: center;
   gap: 30px;
-  list-style: none;
-  padding: 0;
 }
 
-header nav ul li {
-  color: #9600ff;
-}
-
-header nav ul li a {
-  color: rgba(149, 0, 255, 0.7);
-  box-shadow: 0 0 5px rgba(0, 200, 255, 0.6);
-  font-size: 1.75rem;
+nav button {
+  background: rgba(0, 0, 0, 0.6); /* glassy dark */
+  border: 1px solid rgba(0, 200, 255, 0.4);
+  border-radius: 15px;
+  padding: 15px;
+  width: 280px;
+  gap: 20px;
+  text-align: center;
+  backdrop-filter: blur(8px); /* frosted glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 8px;
+  font-size: 1.2rem;
   font-weight: bold;
-  background: none;
-  transition: background 0.3s ease;
+}
+nav button a {
   text-decoration: none;
+  color: #00c8ff;
 }
 
-header nav ul li a:hover {
+nav button:hover {
   box-shadow: 0 0 20px rgba(0, 200, 255, 0.6);
+  text-shadow: 0 0 25px rgba(149, 0, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
   color: #00c8ff;
-  }
+  transform: translateY(-10px) ease-in-out;
+  font-size: 1.5rem;
+}
 
 /* Hero Section */
 hero {
@@ -104,16 +81,6 @@ hero {
 }
 
 /* Games Section */
-games h2,
-.section-header h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 2rem;
-  color: #00c8ff;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
 
 games {
   display: flex;
@@ -182,7 +149,7 @@ about {
   z-index: 10; /* stay above lava lamp */
 }
 
-about h2 {
+.section-header {
   text-align: center;
   margin-bottom: 25px;
   font-size: 2rem;
@@ -192,13 +159,11 @@ about h2 {
 
 .about-card {
   border-radius: 15px;
-  padding-inline-start: 10px;
-  width: fit-content;
-  height:auto;
   display: inline-flex;
-  flex-direction: column;
-  gap: 30px;
-  backdrop: transparent; /* let lava lamp show */
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
+  background: transparent; /* let lava lamp show */
 }
 
 .about-card p {
@@ -227,12 +192,6 @@ contact {
   text-align: center;
 }
 
-contact h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #00c8ff;
-}
-
 contact p {
   font-size: 1.2rem;
   color: #ddd;
@@ -251,16 +210,22 @@ footer {
 }
 
 /* Responsive: stack nav vertically on small screens */
-@media (max-width: 800px) {
+@media (max-width: 883px) {
   header h1 {
-    font-size: clamp(1rem, 7vw, 2rem);
-    max-width: 95vw;
+    font-size: clamp(1rem, 6vw, 2rem);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
     overflow: hidden;
     padding: 15px;
   }
   header nav ul {
     flex-direction: column;
-    gap: 10px;
     align-items: center;
   }
   .games-card, .about-card {
@@ -282,16 +247,22 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 676px) {
   header h1 {
-    font-size: clamp(0.9rem, 8vw, 1.5rem);
-    max-width: 98vw;
+    font-size: clamp(0.9rem, 7vw, 1.5rem);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
     overflow: hidden;
     padding: 10px;
   }
   header nav ul {
     flex-direction: column;
-    gap: 8px;
     align-items: center;
   }
   .games-card, .about-card {
@@ -311,17 +282,24 @@ footer {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 537px) {
   header h1 {
-    font-size: clamp(0.8rem, 10vw, 1.2rem);
-    max-width: 99vw;
+    font-size: clamp(0.8rem, 8vw, 1.1rem);
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
     overflow: hidden;
     padding: 6px;
+    text-wrap: wrap;
     margin-bottom: 12px;
   }
   header nav ul {
     flex-direction: column;
-    gap: 6px;
     align-items: center;
   }
   .games-card, .about-card {
