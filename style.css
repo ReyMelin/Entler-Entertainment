@@ -16,7 +16,7 @@ header {
   background: linear-gradient(135deg, rgb(51, 1, 51), #000000);
   transition: background 0.5s ease;
   margin: 0;
-  padding: 6rem; /* increased from 3rem */
+  padding: 3rem; /* increased from 3rem */
   column-gap: 2rem;
   z-index: 10; /* keep above canvas */
 }
@@ -239,33 +239,23 @@ about {
   width: 100%;
 }
 
-.about-card {
-  border-radius: 15px;
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: space-between;
-  background: transparent; /* let lava lamp show */
-}
 
-.about-card p {
+about p {
   font-size: 1.2rem;
+  justify-content: center;
   color: #ddd;
   margin: 0;
   padding: 10%;
   max-width: 500px;
-  max-height: min-content;
-  width: 100%;
+  height: inherit;
   border-radius: 15px;
 }
 
-.about-card img.about-image {
+about img {
   padding: 10%;
   display: inline-block;
-  justify-content: flex-start;
-  max-width: 400px;
-  max-height: 500px;
-  border-radius: 15px;
+  max-width: 30%;
+  height: auto;
 }
 
 /* Contact Section */
