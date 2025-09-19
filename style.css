@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: white;
+  color: #fff; /* brighter white for better contrast */
   background-color: #000; /* fallback under canvas */
 }
 
@@ -24,8 +24,8 @@ header {
 header h1 {
   font-size: 5rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: #00c8ff;
-  text-shadow: 0 0 25px rgba(149, 0, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
+  color: #fff; /* changed from #00c8ff to white for contrast */
+  text-shadow: 0 0 25px rgba(0, 200, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
 }
 
 nav {
@@ -51,7 +51,7 @@ nav button {
 }
 nav button a {
   text-decoration: none;
-  color: #00c8ff;
+  color: #fff; /* changed from #00c8ff to white for contrast */
 }
 
 nav button:hover {
@@ -110,13 +110,13 @@ games {
 .game-card h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #00c8ff; /* neon blue */
+  color: #fff; /* changed from #00c8ff to white for contrast */
 }
 
 .game-card p {
   font-size: 1rem;
   margin-bottom: 20px;
-  color: #ddd;
+  color: #f5f5f5; /* lighter text for better contrast */
 }
 
 .game-card a {
@@ -189,13 +189,13 @@ books {
 .book-card h3 {
   font-size: 1.3rem;
   margin-bottom: 12px;
-  color: #00c8ff;
+  color: #fff; /* changed from #00c8ff to white for contrast */
 }
 
 .book-card p {
   font-size: 1rem;
   margin-bottom: 18px;
-  color: #ddd;
+  color: #f5f5f5; /* lighter text for better contrast */
 }
 
 .book-card a {
@@ -235,7 +235,7 @@ about {
   text-align: center;
   margin-bottom: 25px;
   font-size: 2rem;
-  color: #00c8ff;
+  color: #fff; /* changed from #00c8ff to white for contrast */
   width: 100%;
 }
 
@@ -243,7 +243,7 @@ about {
 about p {
   font-size: 1.2rem;
   justify-content: center;
-  color: #ddd;
+  color: #f5f5f5; /* lighter text for better contrast */
   margin: 0;
   padding: 10%;
   max-width: 500px;
@@ -266,7 +266,7 @@ contact {
 
 contact p {
   font-size: 1.2rem;
-  color: #ddd;
+  color: #f5f5f5; /* lighter text for better contrast */
   max-width: 700px;
   margin: 0 auto;
 }
@@ -283,143 +283,146 @@ footer {
 
 /* Responsive: stack nav vertically on small screens */
 @media (max-width: 883px) {
+  header {
+    padding: 2rem;
+  }
   header h1 {
-    font-size: clamp(1rem, 6vw, 2rem);
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
+    font-size: 2.5rem;
+    width: 100%;
+    margin: 0 auto 1rem auto;
+    padding: 0.5rem;
     box-sizing: border-box;
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 15px;
+    white-space: normal;
   }
-  header nav ul {
+  nav {
     flex-direction: column;
-    align-items: center;
+    gap: 18px;
+    width: 100%;
   }
-  .games-card, .about-card {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  nav button {
+    width: 90vw;
+    min-width: 180px;
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+  .game-card, .book-card, .about-card {
+    width: 95vw;
     max-width: 500px;
+    margin: 0 auto 18px auto;
+    padding: 18px;
+    gap: 18px;
+  }
+  games, books, about {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 30px 5vw;
+  }
+  .section-header {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
   }
   hero h2, hero p {
-    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-size: 1.2rem;
     padding: 10px;
-  }
-  .about-card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    max-width: 350px;
   }
 }
 
 @media (max-width: 676px) {
+  header {
+    padding: 1.2rem;
+  }
   header h1 {
-    font-size: clamp(0.9rem, 7vw, 1.5rem);
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
-    box-sizing: border-box;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 10px;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
   }
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
+  nav button {
+    font-size: 1rem;
+    padding: 12px;
+    width: 98vw;
+    min-width: 120px;
   }
-  .games-card, .about-card {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  .game-card, .book-card, .about-card {
+    width: 98vw;
     max-width: 350px;
+    padding: 12px;
+    gap: 12px;
+  }
+  games, books, about {
+    gap: 12px;
+    padding: 20px 2vw;
+  }
+  .section-header {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
   }
   hero h2, hero p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 6px;
-  }
-  .about-card {
-    flex-direction: column;
-    gap: 12px;
-    max-width: 95vw;
   }
 }
 
 @media (max-width: 537px) {
+  header {
+    padding: 0.7rem;
+  }
   header h1 {
-    font-size: clamp(0.8rem, 8vw, 1.1rem);
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding-left: 10%;
-    padding-right: 10%;
-    box-sizing: border-box;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 6px;
-    text-wrap: wrap;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    margin-bottom: 0.3rem;
+    white-space: normal;
   }
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
+  nav button {
+    font-size: 0.95rem;
+    padding: 10px;
+    width: 99vw;
+    min-width: 90px;
   }
-  .games-card, .about-card {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    max-width: 98vw;
+  .game-card, .book-card, .about-card {
+    width: 99vw;
+    max-width: 99vw;
+    padding: 8px;
+    gap: 8px;
+  }
+  games, books, about {
+    gap: 8px;
+    padding: 10px 1vw;
+  }
+  .section-header {
+    font-size: 1rem;
+    margin-bottom: 8px;
   }
   hero h2, hero p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding: 4px;
   }
-  .about-card {
-    gap: 10px;
-    max-width: 98vw;
+  .about-card p, .book-card p, .game-card p {
+    font-size: 0.95rem;
+    padding: 4px;
+    max-width: 99vw;
   }
-  .about-card p {
-    font-size: 1rem;
-    padding: 6%;
-    max-width: 98vw;
-  }
-  .about-card img.about-image {
-    max-width: 98vw;
+  .about-card img.about-image, .book-card img, .game-card img {
+    max-width: 90vw;
     height: auto;
   }
-  .game-card {
-    padding: 12px;
-    width: 90vw;
+  .game-card h3, .book-card h3 {
+    font-size: 1rem;
   }
-  .game-card h3 {
-    font-size: 1.1rem;
-  }
-  .game-card p {
-    font-size: 0.9rem;
-  }
-  .game-card a {
-    padding: 8px 12px;
+  .game-card a, .book-card a {
+    padding: 6px 10px;
     font-size: 0.95rem;
   }
   contact h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   contact p {
-    font-size: 1rem;
-    padding: 4px;
+    font-size: 0.95rem;
+    padding: 2px;
   }
   footer {
     font-size: 0.8rem;
-    padding: 8px;
+    padding: 6px;
   }
 }
