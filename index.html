@@ -13,10 +13,15 @@
   <header>
     <h1>Entler Entertainment</h1>
     <nav>
+      <button id="hamburger-menu" aria-label="Open navigation" style="display:none;">
+        &#9776;
+      </button>
+      <div id="nav-links">
         <button><a href="#games">Games</a></button>
         <button><a href="#books">Books</a></button>
         <button><a href="#about">About</a></button>
         <button><a href="#contact">Contact</a></button>
+      </div>
     </nav>
   </header>
 
@@ -34,7 +39,6 @@
     <div class="section-header">
       <h2>About</h2>
       <p>Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.</p>
-      <img src="assets/images/EE ohio.jpg" alt="Entler Entertainment logo featuring stylized letters EE with a map outline of Ohio in the background, bold and energetic design, text reads Entler Entertainment Ohio, overall tone is dynamic and inviting" class="about-image">
     </div>
   </about>
 
@@ -96,5 +100,26 @@
      <p>&copy; 2025 Entler Entertainment. All rights reserved.</p>
     </div> 
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById("hamburger-menu");
+    const navLinks = document.getElementById("nav-links");
+    function checkWidth() {
+      if (window.innerWidth <= 537) {
+        hamburger.style.display = "block";
+        navLinks.style.display = "none";
+      } else {
+        hamburger.style.display = "none";
+        navLinks.style.display = "flex";
+      }
+    }
+    hamburger.addEventListener("click", function() {
+      navLinks.style.display = navLinks.style.display === "block" ? "none" : "block";
+    });
+    window.addEventListener("resize", checkWidth);
+    checkWidth();
+  });
+</script>
 </body>
 </html>

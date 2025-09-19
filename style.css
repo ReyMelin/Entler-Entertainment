@@ -22,7 +22,7 @@ header {
 }
 
 header h1 {
-  font-size: 5rem;
+  font-size: clamp(2.2rem, 8vw, 5rem); /* increased min from 1.5rem to 2.2rem */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: #fff; /* changed from #00c8ff to white for contrast */
   text-shadow: 0 0 25px rgba(0, 200, 255, 0.7), 0 0 45px rgba(150, 0, 255, 0.4);
@@ -40,15 +40,16 @@ nav button {
   border: 1px solid rgba(0, 200, 255, 0.4);
   border-radius: 15px;
   padding: 15px;
-  width: 280px;
+  width: 180px; /* reduced from 280px */
+  max-width: 200px;
   gap: 20px;
   text-align: center;
   backdrop-filter: blur(8px); /* frosted glass effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1rem; /* reduced from 1.2rem */
 }
+
 nav button a {
   text-decoration: none;
   color: #fff; /* changed from #00c8ff to white for contrast */
@@ -126,7 +127,6 @@ games {
   background: linear-gradient(90deg, #00c8ff, #9600ff);
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
   transition: background 0.3s ease;
 }
 
@@ -205,7 +205,6 @@ books {
   background: linear-gradient(90deg, #00c8ff, #9600ff);
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
   transition: background 0.3s ease;
 }
 
@@ -244,18 +243,15 @@ about p {
   font-size: 1.2rem;
   justify-content: center;
   color: #f5f5f5; /* lighter text for better contrast */
-  margin: 0;
-  padding: 10%;
+  margin: auto;
+  padding: 5%;
   max-width: 500px;
   height: inherit;
   border-radius: 15px;
-}
-
-about img {
-  padding: 10%;
-  display: inline-block;
-  max-width: 30%;
-  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
 }
 
 /* Contact Section */
@@ -301,8 +297,8 @@ footer {
     width: 100%;
   }
   nav button {
-    width: 90vw;
-    min-width: 180px;
+    width: 70vw; /* reduced from 90vw */
+    min-width: 120px;
     font-size: 1.1rem;
     margin: 0 auto;
   }
@@ -331,98 +327,95 @@ footer {
 
 @media (max-width: 676px) {
   header {
-    padding: 1.2rem;
+    padding: 2rem;
   }
   header h1 {
-    font-size: 1.5rem;
-    padding: 0.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.3rem; /* increased */
+    padding: 0.7rem;
+    margin-bottom: 1rem;
   }
   nav button {
-    font-size: 1rem;
-    padding: 12px;
-    width: 98vw;
-    min-width: 120px;
+    width: 85vw;
+    min-width: 90px;
+    font-size: 1.05rem; /* reduced */
+    padding: 16px;     /* increased */
   }
   .game-card, .book-card, .about-card {
     width: 98vw;
-    max-width: 350px;
-    padding: 12px;
-    gap: 12px;
+    max-width: 370px;  /* increased */
+    padding: 18px;     /* increased */
+    gap: 16px;         /* increased */
   }
   games, books, about {
-    gap: 12px;
-    padding: 20px 2vw;
+    gap: 16px;
+    padding: 28px 2vw; /* increased */
   }
   .section-header {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+    font-size: 1.5rem; /* increased */
+    margin-bottom: 16px;
   }
   hero h2, hero p {
-    font-size: 1rem;
-    padding: 6px;
+    font-size: 1.25rem; /* increased */
+    padding: 10px;
+  }
+  .about-card p, .book-card p, .game-card p {
+    font-size: 1.15rem; /* increased */
+    padding: 8px;
+    max-width: 98vw;
   }
 }
 
 @media (max-width: 537px) {
   header {
-    padding: 0.7rem;
+    padding: 1.2rem;
   }
   header h1 {
-    font-size: 1.1rem;
-    padding: 0.2rem;
-    margin-bottom: 0.3rem;
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
     white-space: normal;
   }
-  nav button {
-    font-size: 0.95rem;
-    padding: 10px;
-    width: 99vw;
-    min-width: 90px;
+  nav {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0;
   }
-  .game-card, .book-card, .about-card {
-    width: 99vw;
-    max-width: 99vw;
-    padding: 8px;
-    gap: 8px;
+  /* Hamburger button styles */
+  #hamburger-menu {
+    display: block !important;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    z-index: 100;
   }
-  games, books, about {
-    gap: 8px;
-    padding: 10px 1vw;
+  /* Dropdown menu styles */
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    width: 100vw;
+    background: rgba(0,0,0,0.95);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-radius: 0 0 15px 15px;
+    padding: 16px 0;
+    z-index: 99;
   }
-  .section-header {
-    font-size: 1rem;
-    margin-bottom: 8px;
+  #nav-links button {
+    width: 90vw;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
   }
-  hero h2, hero p {
-    font-size: 0.85rem;
-    padding: 4px;
-  }
-  .about-card p, .book-card p, .game-card p {
-    font-size: 0.95rem;
-    padding: 4px;
-    max-width: 99vw;
-  }
-  .about-card img.about-image, .book-card img, .game-card img {
-    max-width: 90vw;
-    height: auto;
-  }
-  .game-card h3, .book-card h3 {
-    font-size: 1rem;
-  }
-  .game-card a, .book-card a {
-    padding: 6px 10px;
-    font-size: 0.95rem;
-  }
-  contact h2 {
-    font-size: 1rem;
-  }
-  contact p {
-    font-size: 0.95rem;
-    padding: 2px;
-  }
-  footer {
-    font-size: 0.8rem;
-    padding: 6px;
+  /* Hide nav buttons outside dropdown */
+  nav > button:not(#hamburger-menu) {
+    display: none !important;
   }
 }
