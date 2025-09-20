@@ -406,7 +406,6 @@ footer {
     top: 100%;
     transform: translateX(-50%);
     width: 90vw;
-    flex-direction: column;
     gap: 1rem;
     align-items: center;
     justify-content: flex-start;
