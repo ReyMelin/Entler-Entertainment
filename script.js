@@ -10,8 +10,8 @@ window.addEventListener("load", () => {
 // Lava lamp effect across the whole page
 function startLavaLamp(container) {
   const colors = [
-    "rgba(26, 0, 51, 0.45)",   // darker blue
-    "rgba(34, 0, 68, 0.45)"    // darker purple
+    "rgba(12, 8, 73, 0.56)",   // darker blue
+    "rgba(64, 12, 116, 0.45)"    // darker purple
   ];
 
   const canvas = document.createElement("canvas");
