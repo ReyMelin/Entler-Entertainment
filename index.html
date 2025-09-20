@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entler Entertainment</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script src="script.js"></script>
 </head>
 <body>
@@ -17,10 +20,10 @@
         &#9776;
       </button>
       <div id="nav-links">
-        <button><a href="#games">Games</a></button>
-        <button><a href="#books">Books</a></button>
-        <button><a href="#about">About</a></button>
-        <button><a href="#contact">Contact</a></button>
+        <a href="#about"><button>About</button></a>
+        <a href="#games"><button>Games</button></a>
+        <a href="#books"><button>Books</button></a>
+        <a href="#contact"><button>Contact</button></a>
       </div>
     </nav>
   </header>
@@ -35,7 +38,7 @@
   </hero>
 
     <!-- About Section -->
-  <about>
+  <about id="about">
     <div class="section-header">
       <h2>About</h2>
       <p>Entler Entertainment is the creative vision of Thomas Entler — a storyteller, innovator, and creator of interactive experiences. With two published books, a groundbreaking augmented reality mobile game, and a new social media platform in development, Entler Entertainment explores the space where imagination meets technology. From words on a page to worlds in your pocket, the mission is to create experiences that entertain, inspire, and connect people in meaningful ways.</p>
@@ -43,7 +46,7 @@
   </about>
 
   <!-- Games Section -->
-  <games>
+  <games id="games">
     <div class="section-header">
       <h2>Our Games</h2>
     </div>
@@ -64,16 +67,18 @@
   </games>
 
   <!-- Books Section -->
-  <books>
+  <books id="books">
     <div class="section-header">
       <h2>Our Books</h2>
     </div> 
+
     <div class="book-card">
       <h3>Time Prophets</h3>
       <img src="Time Prophets Cover.png" alt="Time Prophets book cover featuring a futuristic cityscape with flying cars and neon lights, vibrant and dynamic design, text reads Time Prophets by Thomas Entler, overall tone is adventurous and thrilling">
       <p>An epic fantasy adventure filled with magic and mystery.</p>
       <a href="https://a.co/d/0ETCQq3" target="_blank" rel="noopener">Buy on Amazon</a>
     </div>
+    
     <div class="book-card">
       <h3>Backwoods Shenanigans</h3>
       <img src="Backwoods Shenanigans.png" alt="Backwoods Shenanigans book cover featuring a rustic cabin in the woods with a campfire and trees, warm and inviting design, text reads Backwoods Shenanigans by Thomas Entler, overall tone is adventurous and cozy">
@@ -83,7 +88,7 @@
   </books>
 
   <!-- Contact Us Section -->
-  <contact>
+  <contact id="contact">
     <div class="section-header">
       <h2>Contact Us</h2>
     </div>
