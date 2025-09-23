@@ -24,7 +24,7 @@ body {
 
 header {
   background: linear-gradient(135deg, rgb(51, 1, 51), #000000);
-  transition: background 0.7s ease, padding 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
+  transition: background 0.4s ease, padding 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
   margin: 0;
   padding: 3rem;
   position: fixed;
@@ -39,6 +39,7 @@ header {
   align-items: center;
   justify-content: center;
   height: auto;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
 }
 
 header.scrolled {
@@ -48,25 +49,19 @@ header.scrolled {
   align-items: center;
   justify-content: space-between;
   column-gap: 2rem;
+  transition: background 0.4s cubic-bezier(.4,0,.2,1), padding 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
 }
 
-header.scrolled nav,
-header.scrolled #nav-links {
-  margin-top: 0;
-  margin-right: 2rem;
-  gap: 10px; /* decrease gap on scroll */
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+header h1,
+header.scrolled h1 {
+  transition: font-size 0.2s cubic-bezier(.4,0,.2,1), color 0.4s cubic-bezier(.4,0,.2,1), text-shadow 0.4s cubic-bezier(.4,0,.2,1);
 }
 
 header.scrolled nav button,
-header.scrolled #nav-links button {
-  font-size: 1.1rem; /* shrink font size on scroll */
-  padding: 10px 18px;
-  width: 120px;
-  max-width: 140px;
-  margin-bottom: 0;
+header.scrolled #nav-links button,
+nav button,
+#nav-links button {
+  transition: font-size 0.2s cubic-bezier(.4,0,.2,1), transform 0.3s ease, box-shadow 0.3s ease, color 0.4s cubic-bezier(.4,0,.2,1);
 }
 
 header h1 {
